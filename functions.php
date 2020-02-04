@@ -1,0 +1,7 @@
+<?php
+//EXO 1
+//FONCTION MUTIPLIER
+
+
+
+?>
