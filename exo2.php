@@ -2,7 +2,6 @@
     include("common/header.php");
     include("common/menu.php");
     include("common/footer.php");
-    include("functions.php");
 ?>
 
 <h1>Affichage d'une pyramide</h1>

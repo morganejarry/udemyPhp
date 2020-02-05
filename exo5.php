@@ -15,8 +15,8 @@
         $notes = $_GET['notes'];
         echo '<p>Inscrire les notes pour calculer la moyenne :</p>';
         echo '<form action="" method="POST">';
-        for($i = 1; $i < $notes; $i++ ){
-            echo '<label for="note' . $i . '">Note ' . $i . ' : ';
+        for($i = 1; $i <= $notes; $i++ ){
+            echo '<label for="note' . $i . '">Note ' . $i . ' : </label>';
             echo '<input type="number" min="0" max="20" name="note' . $i . '" id="note' . $i . '">';
             echo '<br />';
         }
@@ -26,9 +26,12 @@
         echo '<h3>Veuillez saisir une valeur dans le champ ci-dessus</h3>';
     }
 
-    if(isset($_GET['note1'])){
-       echo 'La moyenne est :';
-
+    if(isset($_POST['note1'])){
+        $resultat = 0;
+        for($i = 1; $i <= $notes; $i++){
+            $resultat += $_POST['note'.$i];
+        }
+        echo 'La moyenne est : ' . $resultat / $notes;
     }else{
         echo '<h3>Veuillez saisir la/les note(s)</h3>';
     }
